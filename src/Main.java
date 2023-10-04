@@ -1,6 +1,8 @@
 import br.edu.umfg.estrategia.Carrinho;
 import br.edu.umfg.estrategia.MeioPagamentoCieloEstrategia;
 import br.edu.umfg.estrategia.MeioPagamentoDinheiroEstrategia;
+import br.edu.umfg.estrategia.MeioPagamentoCieloCartaoCreditoEstrategia;
+import br.edu.umfg.estrategia.MeioPagamentoCieloCartaoDebitoEstrategia;
 import br.edu.umfg.estrategia.Produto;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
@@ -20,5 +22,20 @@ public class Main {
                 "785247893", "699", "10/2032" ));
 
         carrinho.pagar(new MeioPagamentoDinheiroEstrategia());
+
+        String numeroCartaoCredito = "1234567890123456";
+        String cpf = "12345678901";
+        String cvv = "123";
+        String dataValidade = "12/2025";
+
+        // Pagamento com cartão de crédito
+        MeioPagamentoCieloCartaoCreditoEstrategia cartaoCreditoEstrategia = new MeioPagamentoCieloCartaoCreditoEstrategia(numeroCartaoCredito, cpf, cvv, dataValidade);
+        carrinho.pagar(cartaoCreditoEstrategia);
+
+        String numeroCartaoDebito = "9876543210987654";
+        // Pagamento com cartão de débito
+        MeioPagamentoCieloCartaoDebitoEstrategia cartaoDebitoEstrategia = new MeioPagamentoCieloCartaoDebitoEstrategia(numeroCartaoDebito, cpf, cvv, dataValidade);
+        carrinho.pagar(cartaoDebitoEstrategia);
+
     }
 }

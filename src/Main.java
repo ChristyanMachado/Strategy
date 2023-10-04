@@ -23,18 +23,17 @@ public class Main {
 
         carrinho.pagar(new MeioPagamentoDinheiroEstrategia());
 
-        String numeroCartaoCredito = "1234567890123456";
-        String cpf = "12345678901";
-        String cvv = "123";
-        String dataValidade = "12/2025";
+
+
+
 
         // Pagamento com cartão de crédito
-        MeioPagamentoCieloCartaoCreditoEstrategia cartaoCreditoEstrategia = new MeioPagamentoCieloCartaoCreditoEstrategia(numeroCartaoCredito, cpf, cvv, dataValidade);
+        MeioPagamentoCieloCartaoCreditoEstrategia cartaoCreditoEstrategia = new MeioPagamentoCieloCartaoCreditoEstrategia("5278805401102799", "06195416010","123" , "12/2025");
         carrinho.pagar(cartaoCreditoEstrategia);
 
-        String numeroCartaoDebito = "9876543210987654";
+
         // Pagamento com cartão de débito
-        MeioPagamentoCieloCartaoDebitoEstrategia cartaoDebitoEstrategia = new MeioPagamentoCieloCartaoDebitoEstrategia(numeroCartaoDebito, cpf, cvv, dataValidade);
+        MeioPagamentoCieloCartaoDebitoEstrategia cartaoDebitoEstrategia = new MeioPagamentoCieloCartaoDebitoEstrategia("9876543210987654","38718931022","123","07/2030" );
         carrinho.pagar(cartaoDebitoEstrategia);
 
     }

@@ -31,18 +31,22 @@ public class MeioPagamentoCieloCartaoCreditoEstrategia implements MeioPagamentoE
 
     private boolean validarCartaoCredito() {
         if (!validarNumeroCartaoDeCredito(numeroCartao)) {
+            System.out.println("Cartão");
             return false;
         }
 
         if (!validarCPF(cpf)) {
+            System.out.println("CPF");
             return false;
         }
 
         if (!validarCVV(cvv)) {
+            System.out.println("CVV");
             return false;
         }
 
         if (!validarDataValidade(dataValidade)) {
+            System.out.println("Data Validade");
             return false;
         }
 
